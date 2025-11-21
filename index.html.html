@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URGENTE!!!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+            font-family: 'Comic Sans MS', cursive;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: white;
+            border: 5px solid #000;
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 10px 10px 0px #000;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #ff0000;
+            text-shadow: 3px 3px 0px #000;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 24px;
+            font-family: 'Comic Sans MS', cursive;
+            border: 4px solid #000;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-disabled {
+            background: #00ff00;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .btn-disabled:hover {
+            transform: rotate(-2deg) scale(0.95);
+        }
+
+        .btn-active {
+            background: #00ff00;
+            color: #000;
+        }
+
+        .btn-active:hover {
+            background: #00cc00;
+            transform: scale(1.05);
+        }
+
+        .reveal {
+            display: none;
+            animation: shake 0.5s;
+        }
+
+        .reveal h2 {
+            font-size: 36px;
+            color: #ff0000;
+            text-shadow: 2px 2px 0px #000;
+            margin: 20px 0;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+
+        .trollface {
+            width: 200px;
+            margin: 20px auto;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-msg {
+            display: none;
+            background: #ff0000;
+            color: white;
+            padding: 15px;
+            border: 3px solid #000;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            animation: blink 0.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        .emojis {
+            font-size: 50px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="initial">
+            <h1>eai meu nego, tu conhece a paola? Responda corretamente para a pesquisa.</h1>
+            <div class="button-container">
+                <button class="btn-disabled" onclick="showError()">não conheço</button>
+                <button class="btn-active" onclick="showReveal()">que paola?</button>
+            </div>
+            <div class="error-msg" id="errorMsg">
+                ⚠️ ERRO! Essa opção não funciona! ⚠️
+            </div>
+        </div>
+
+        <div id="reveal" class="reveal">
+            <h2>aquela que enche teu cu de rola kk</h2>
+            <div class="emojis">😂😂😂🤣🤣🤣😭😭😭</div>
+            <svg class="trollface" viewBox="0 0 200 200">
+                <ellipse cx="100" cy="100" rx="90" ry="95" fill="#fff" stroke="#000" stroke-width="3"/>
+                <ellipse cx="65" cy="80" rx="15" ry="25" fill="#000"/>
+                <ellipse cx="135" cy="80" rx="15" ry="25" fill="#000"/>
+                <path d="M 50 130 Q 100 170 150 130" stroke="#000" stroke-width="4" fill="none"/>
+                <path d="M 45 125 Q 50 120 55 125" stroke="#000" stroke-width="3" fill="none"/>
+                <path d="M 145 125 Q 150 120 155 125" stroke="#000" stroke-width="3" fill="none"/>
+            </svg>
+            <h2 style="font-size: 48px;">FOI MOGGADO PELO BRENNINHO CHAD, SEU BETA KK 😎</h2>
+        </div>
+    </div>
+
+    <script>
+        function showError() {
+            const errorMsg = document.getElementById('errorMsg');
+            errorMsg.style.display = 'block';
+            setTimeout(() => {
+                errorMsg.style.display = 'none';
+            }, 2000);
+        }
+
+        function showReveal() {
+            document.getElementById('initial').style.display = 'none';
+            document.getElementById('reveal').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
